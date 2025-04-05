@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickForms – Instant Form Builder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>QuickForms 🚀</h1>
+      <p>Create a form visually and copy the code instantly.</p>
+
+      <h2>Customize Form:</h2>
+      <div class="customization">
+        <label
+          >Form Title:
+          <input type="text" id="formTitle" placeholder="e.g. Contact Us" />
+        </label>
+        <label
+          >Font Size:
+          <select id="fontSizeSelect">
+            <option value="16px">Default</option>
+            <option value="18px">Large</option>
+            <option value="22px">XL</option>
+          </select>
+        </label>
+        <label
+          >Form Width:
+          <select id="formWidthSelect">
+            <option value="100%">Full</option>
+            <option value="80%">80%</option>
+            <option value="60%">60%</option>
+          </select>
+        </label>
+        <label
+          >Background Color:
+          <input type="color" id="bgColorPicker" value="#ffffff" />
+        </label>
+      </div>
+
+      <h2>Add Custom Field:</h2>
+      <div class="field-options">
+        <label
+          >Field Type:
+          <select id="fieldType">
+            <option value="text">Text</option>
+            <option value="email">Email</option>
+            <option value="textarea">Textarea</option>
+            <option value="dropdown">Dropdown</option>
+          </select>
+        </label>
+        <label
+          >Label Text:
+          <input type="text" id="fieldLabel" placeholder="e.g. Your Name" />
+        </label>
+        <label
+          >Placeholder:
+          <input
+            type="text"
+            id="fieldPlaceholder"
+            placeholder="e.g. John Doe"
+          />
+        </label>
+        <label
+          >Required?
+          <input type="checkbox" id="fieldRequired" />
+        </label>
+        <button onclick="addCustomField()">Add Field</button>
+        <button onclick="clearForm()">Clear All</button>
+      </div>
+
+      <h2>Live Preview:</h2>
+      <form
+        id="formPreview"
+        class="form-preview"
+        onsubmit="handleSubmit(event)"
+      >
+        <!-- Injected fields -->
+      </form>
+
+      <h2>Generated HTML Code:</h2>
+      <pre><code id="generatedCode">&lt;form&gt;&lt;/form&gt;</code></pre>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
